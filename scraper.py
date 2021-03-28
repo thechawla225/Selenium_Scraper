@@ -8,7 +8,7 @@ df = pd.DataFrame()
 mainlink = 'https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwiz9uTzkdPvAhXRwTgGHchPAEgQPAgI'
 
 find = input("Enter the search terms: ")
-driver = webdriver.Chrome('E:\Chrome Driver\chromedriver.exe')
+driver = webdriver.Chrome('chromedriver.exe')
 driver.get(mainlink)
 search = driver.find_element_by_name("q")
 search.send_keys(find)
@@ -97,7 +97,7 @@ for i in range(len(Page_Number)):
     elif(Page_Number[i]==1 or Page_Number[i]=='1'):
         Search_Result_Number[i] = counter
         counter = counter + 1
-        
+
 
 df['Page_Number'] = Page_Number
 df['Search_Result_Number'] = Search_Result_Number
